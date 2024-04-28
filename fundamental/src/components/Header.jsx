@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+// inline css
 
 const Header = () => {
   return (
-    <div>
+      <header
+        style={{
+          backgroundColor: "darkgray",
+          padding: "8px",
+          textAlign: "center",
+          fontFamily: "sans-serif",
+        }}
+      >
         <h1>Header</h1>
-    </div>
-  )
-}
+      </header>
+  );
+};
 
-export default Header
+export default Header;

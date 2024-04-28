@@ -1,13 +1,13 @@
 import React from "react"
-
-// render = menampilkan/load
+import "../styles/Footer.css"
 
 class Footer extends React.Component {
+    // render = menampilkan/load
     render() {
         return (
-            <div>
-                <h1>Footer</h1>
-            </div>
+                <footer>
+                    <h1 className="footer-text">Footer</h1>
+                </footer>
         )
     }
 }
