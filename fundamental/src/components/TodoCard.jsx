@@ -9,22 +9,12 @@ import {
   Divider,
 } from "@nextui-org/react";
 
-const TodoCard = () => {
-  // return (
-  //   <div>
-  //       <h5>Monday</h5>
-  //       <ul>
-  //           <li>Sarapan</li>
-  //           <li>Makan</li>
-  //           <li>Tidur</li>
-  //       </ul>
-  //   </div>
-  // )
+const TodoCard = (props) => {
 
   return (
     <>
       <Card className="max-w-[400px]">
-        <CardHeader className="font-bold text-lg">Monday</CardHeader>
+        <CardHeader className="font-bold text-lg">{props.day} ({props.numberOfActifities})</CardHeader>
         <Divider />
         <CardBody>
           <ul className="list-decimal list list-inside">

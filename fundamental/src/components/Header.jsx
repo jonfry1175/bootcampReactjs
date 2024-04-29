@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "./Heading";
 // inline css
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
           fontFamily: "sans-serif",
         }}
       >
-        <h1>Header</h1>
+        <Heading>My Custom Heading from props children</Heading>
       </header>
   );
 };
