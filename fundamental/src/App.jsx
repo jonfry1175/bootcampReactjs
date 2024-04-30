@@ -3,12 +3,13 @@ import Footer from "./components/Footer";
 import TodoCard from "./components/TodoCard";
 import Counter from "./components/Counter";
 import { Button, Input } from "@nextui-org/react";
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 function App() {
-  const inputRef = useRef();
+  // const inputRef = useRef();
+  const [inputWhislitsItem, setInputWhislitsItem] = useState("");
 
+  // yang didalam array = default value
   const [wishListItems, setWishListItems] = useState([
     "keyboard",
     "mouse",
@@ -16,19 +17,24 @@ function App() {
   ]);
 
   const addWhistlistItem = () => {
-    const valueInputWhisList = inputRef.current.value;
+    const newWishListItems = [...wishListItems, inputWhislitsItem];
+    // console.log(newWishListItems);
+    setWishListItems(newWishListItems);
 
-    const newValue = [...wishListItems, valueInputWhisList];
-
-    console.log(newValue);
-    
-    setWishListItems(newValue);
+    setInputWhislitsItem("");
   };
 
   return (
     <>
       <div className="flex items-center p-4 gap-4">
-        <Input ref={inputRef} label="Whistlist Item" color="secondary" />
+        <Input
+          value={inputWhislitsItem}
+          onChange={(event) => {
+            event.target.value.length >= 8 ? alert ("maksimal 8 karakter") : setInputWhislitsItem(event.target.value)
+          }}
+          label="Whistlist Item"
+          color="secondary"
+        />
         <Button onClick={addWhistlistItem} color="primary">
           Add
         </Button>
