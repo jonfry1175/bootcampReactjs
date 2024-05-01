@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Heading from "./Heading";
 import { Button } from "@nextui-org/react";
+import { redBackground } from "../hoc/redBackground";
 // inline css
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
   return (
     <header
       style={{
-        backgroundColor: "darkgray",
+        // backgroundColor: "darkgray",
         padding: "8px",
         textAlign: "center",
         fontFamily: "sans-serif",
@@ -45,4 +46,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default redBackground(Header);
