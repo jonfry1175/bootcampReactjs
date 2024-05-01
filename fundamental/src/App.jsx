@@ -1,9 +1,11 @@
 import Register from "./pages/Register";
+import WishList from "./pages/WishList";
 
 function App() {
   return (
     <div>
-      <Register />
+      {/* <Register /> */}
+      <WishList />
     </div>
   );
 }

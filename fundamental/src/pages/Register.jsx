@@ -44,7 +44,7 @@ const Register = () => {
               name="email"
               control={form.control}
               // field = props
-              // fieldState = untuk mengetahui validasi eror
+              // fieldState = untuk mengetahui pesan validasi eror
               render={({ field, fieldState }) => {
                 return (
                   <Input

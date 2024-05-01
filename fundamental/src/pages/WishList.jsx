@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Button, Input } from "@nextui-org/react";
-
+import { axiosInstance } from "../lib/axios";
+import { useEffect } from "react";
 
 const WishList = () => {
-  const [inputWhislitsItem, setInputWhislitsItem] = useState("");
 
-  // yang didalam array = default value
-  const [wishListItems, setWishListItems] = useState([
-    "keyboard",
-    "mouse",
-    "monitor",
-  ]);
+  const [inputWhislitsItem, setInputWhislitsItem] = useState("");
+  const [wishListItems, setWishListItems] = useState([]);
+
+  const getWishListItems = async () => {
+    const response = await axiosInstance.get("/whislist");
+    // console.log(response.data);
+    setWishListItems(response.data);
+  }
 
   const addWhistlistItem = () => {
     const newWishListItems = [...wishListItems, inputWhislitsItem];
@@ -19,6 +21,10 @@ const WishList = () => {
 
     setInputWhislitsItem("");
   };
+
+  useEffect(() => {
+    getWishListItems()
+  }, [])
   return (
     <>
       <div className="flex items-center p-4 gap-4">
@@ -37,9 +43,9 @@ const WishList = () => {
         </Button>
       </div>
 
-      <ul className="list-decimal list-inside text-center">
+      <ul className="list-inside text-center">
         {wishListItems.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item.id}>{item.id}. {item.name}</li>
         ))}
       </ul>
     </>
