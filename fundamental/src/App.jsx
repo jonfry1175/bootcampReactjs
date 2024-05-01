@@ -1,10 +1,11 @@
 import Register from "./pages/Register";
 import WishList from "./pages/WishList";
+import {Toaster} from "sonner"
 
 function App() {
   return (
     <div>
-      {/* <Register /> */}
+      <Toaster position="top-center"/>
       <WishList />
     </div>
   );

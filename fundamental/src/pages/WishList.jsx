@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "@nextui-org/react";
 import { axiosInstance } from "../lib/axios";
 import { useEffect } from "react";
+import {toast} from "sonner"
 
 const WishList = () => {
   const [inputWhislitsItem, setInputWhislitsItem] = useState("");
@@ -20,14 +21,15 @@ const WishList = () => {
       })
       if(result) {
         getWishListItems();
-        alert("Succes!")
+        toast.success("Succes!")
         setInputWhislitsItem("")
       } else {
-        alert("Failed!")
+        toast.message("Failed!")
       }
 
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
+      toast.error("Failed!")
     }
   };
 
