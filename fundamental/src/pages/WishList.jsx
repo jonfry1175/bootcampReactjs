@@ -4,7 +4,6 @@ import { axiosInstance } from "../lib/axios";
 import { useEffect } from "react";
 
 const WishList = () => {
-
   const [inputWhislitsItem, setInputWhislitsItem] = useState("");
   const [wishListItems, setWishListItems] = useState([]);
 
@@ -12,28 +11,40 @@ const WishList = () => {
     const response = await axiosInstance.get("/whislist");
     // console.log(response.data);
     setWishListItems(response.data);
-  }
+  };
 
-  const addWhistlistItem = () => {
-    const newWishListItems = [...wishListItems, inputWhislitsItem];
-    // console.log(newWishListItems);
-    setWishListItems(newWishListItems);
+  const addWhistlistItem = async () => {
+    try {
+       const result = await axiosInstance.post("/whislist", {
+        name: inputWhislitsItem,
+      })
+      if(result) {
+        getWishListItems();
+        alert("Succes!")
+        setInputWhislitsItem("")
+      } else {
+        alert("Failed!")
+      }
 
-    setInputWhislitsItem("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    getWishListItems()
-  }, [])
+    getWishListItems();
+  }, []);
   return (
     <>
       <div className="flex items-center p-4 gap-4">
         <Input
           value={inputWhislitsItem}
           onChange={(event) => {
-            event.target.value.length >= 8
-              ? alert("maksimal 8 karakter")
-              : setInputWhislitsItem(event.target.value);
+            if (event.target.value.length >= 8) {
+              alert("maksimal 8!");
+            } else {
+              setInputWhislitsItem(event.target.value);
+            }
           }}
           label="Whistlist Item"
           color="secondary"
@@ -43,9 +54,9 @@ const WishList = () => {
         </Button>
       </div>
 
-      <ul className="list-inside text-center">
+      <ul className="list-decimal list-inside text-center">
         {wishListItems.map((item) => (
-          <li key={item.id}>{item.id}. {item.name}</li>
+          <li key={item.name}>{item.name}</li>
         ))}
       </ul>
     </>
