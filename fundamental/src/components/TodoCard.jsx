@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Button,
@@ -30,5 +31,10 @@ const TodoCard = (props) => {
     </>
   );
 };
+
+TodoCard.propTypes = {
+  day: PropTypes.string.isRequired,
+  numberOfActifities: PropTypes.number.isRequired,
+}
 
 export default TodoCard;
