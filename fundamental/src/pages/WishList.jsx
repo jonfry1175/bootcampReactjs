@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input, LinkIcon } from "@nextui-org/react";
 import { axiosInstance } from "../lib/axios";
 import { useEffect } from "react";
 import {toast} from "sonner"
+import { Link } from "react-router-dom";
 
 const WishList = () => {
   const [inputWhislitsItem, setInputWhislitsItem] = useState("");
@@ -61,6 +62,9 @@ const WishList = () => {
           <li key={item.name}>{item.name}</li>
         ))}
       </ul>
+      <Link to="/profile">
+        <Button color="success">Profile pages</Button>
+      </Link>
     </>
   );
 };
