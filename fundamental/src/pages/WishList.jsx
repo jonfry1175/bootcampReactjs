@@ -4,8 +4,12 @@ import { axiosInstance } from "../lib/axios";
 import { useEffect } from "react";
 import {toast} from "sonner"
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux'
 
 const WishList = () => {
+  const selectorCount = useSelector((store) => store.counter.count)
+  const selectorMessage = useSelector((store) => store.message)
+
   const [inputWhislitsItem, setInputWhislitsItem] = useState("");
   const [wishListItems, setWishListItems] = useState([]);
 
@@ -62,6 +66,11 @@ const WishList = () => {
           <li key={item.name}>{item.name}</li>
         ))}
       </ul>
+      <div>
+        <p>Global Count : {selectorCount}</p>
+        <p>Global message: {selectorMessage}</p>
+        
+      </div>
       <Link to="/profile">
         <Button color="success">Profile pages</Button>
       </Link>
