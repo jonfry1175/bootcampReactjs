@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button, Input, LinkIcon } from "@nextui-org/react";
 import { axiosInstance } from "../lib/axios";
 import { useEffect } from "react";
-import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 import { useSelector, useDispatch } from "react-redux";
 
 // dispatch = mengirimkan data

@@ -6,9 +6,12 @@ import Register from "./pages/Register";
 import { Routes, Route } from "react-router-dom";
 import WishListRedux from "./pages/WishListRedux";
 import WishList from "./pages/WishList";
+import { Toaster } from "sonner";
 
 function App() {
   return (
+    <>
+    <Toaster position="top-center" />
     <Routes>
       <Route element={<WishListRedux />} path="/" />
       <Route element={<WishList/>} path="/whislist" />
@@ -17,6 +20,7 @@ function App() {
       <Route element={<Profile />} path="/profile/:username" />
       <Route element={<CounterPage />} path="/counter" />
     </Routes>
+    </>
   );
 }
 

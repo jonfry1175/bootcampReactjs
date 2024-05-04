@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "sonner": "^1.4.41"
   },
   "devDependencies": {
     "json-server": "1.0.0-alpha.23"
