@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { RegisterContext } from '../context/RegisterContext'
+import { Button } from '@nextui-org/react'
 
 // cara menggunakan isi context = pake useContext
 
@@ -17,7 +18,14 @@ class Heading extends React.Component {
 static contextType = RegisterContext
 
   render() {
-    return <h1>{this.context.title}</h1>
+    return (
+      <>
+      <h1>{this.context.title}</h1>
+      <Button 
+      color="primary"
+      onClick={() => this.context.setTitle("Halo Cuyy")}>Change Title</Button>
+      </>
+    )
   }
 }
 

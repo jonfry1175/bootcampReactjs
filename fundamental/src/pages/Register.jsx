@@ -41,16 +41,16 @@ const Register = () => {
 
   // handleSubmit bawaan dari react-hook-form
   return (
-    <RegisterContextProvider value={{ title: "REGISTER PAGE" }}>
+    <RegisterContextProvider >
     <Header />
-    {/* <RegisterContextConsumer>
+    <RegisterContextConsumer>
       {
         (context) => {
           return  <p className="text-3xl font-semibold text-center">{context.title}</p>
         }
       }
-    </RegisterContextConsumer> */}
-    <p className="text-3xl font-semibold text-center">{registerContext.title}</p>
+    </RegisterContextConsumer>
+    {/* <p className="text-3xl font-semibold text-center">{registerContext.title}</p> */}
       <div className="flex h-screen items-center justify-center">
         <Card className="w-[300px]">
           <CardHeader className="font-semibold text-lg">Sign Up!</CardHeader>
