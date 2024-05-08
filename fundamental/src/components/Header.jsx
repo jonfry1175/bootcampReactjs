@@ -7,24 +7,25 @@ import { redBackground } from "../hoc/redBackground";
 const Header = () => {
  const [message, setMessage] = useState("Hello World");
 
-  const alertUser = () => {
-    alert("DID MOUNT");
-  };
 
-  // componentDidMount
-  useEffect(() => {
-    alertUser();
+  // const alertUser = () => {
+  //   alert("DID MOUNT");
+  // };
 
-    // componentWillUnmount harus pake return
-    return () => {
-      alert("willUnmount");
-    };
-  }, []);
+  // // componentDidMount
+  // useEffect(() => {
+  //   alertUser();
 
-  // componentDidUpdate
-  useEffect(() => {
-    alert("Did Update");
-  }, [message]); // harus spesifik untuk men-cek apa yang sudah di update
+  //   // componentWillUnmount harus pake return
+  //   return () => {
+  //     alert("willUnmount");
+  //   };
+  // }, []);
+
+  // // componentDidUpdate
+  // useEffect(() => {
+  //   alert("Did Update");
+  // }, [message]); // harus spesifik untuk men-cek apa yang sudah di update
 
   const changeMessage = () => {
     setMessage("State Changed");
@@ -39,9 +40,9 @@ const Header = () => {
         fontFamily: "sans-serif",
       }}
     >
-      <Heading>My Custom Heading from props children</Heading>
-      <h1>{message}</h1>
-      <Button onClick={changeMessage}>Change Message</Button>
+      <Heading/>
+      {/* <h1>{message}</h1>
+      <Button onClick={changeMessage}>Change Message</Button> */}
     </header>
   );
 };
