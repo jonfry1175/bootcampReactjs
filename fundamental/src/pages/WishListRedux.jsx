@@ -28,7 +28,7 @@ const WishListRedux = () => {
 
       if (result) {
         dispatch({ type: "ADD_WHISLIST", payload: result.data });
-        toast.warning("Whislist item added");
+        toast.success("Whislist item added");
 
         setInputWhislitsItem("");
       } else {
@@ -92,6 +92,7 @@ const WishListRedux = () => {
             <li key={item.name}> {item.name}</li>
           ))}
         </ul>
+        <Link to='/auth/register'>Register</Link>
       </div>
       <Button 
       onClick={withoutArrow(2, 3)}

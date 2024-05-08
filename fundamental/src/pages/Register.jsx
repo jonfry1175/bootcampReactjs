@@ -12,6 +12,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Header from "../components/Header";
 import { RegisterContext, RegisterContextConsumer, RegisterContextProvider } from "../context/RegisterContext";
+import { Link } from "react-router-dom";
 // import { RegisterProvider }  from "context/registerContext";
 
 
@@ -114,6 +115,7 @@ const Register = () => {
             </CardBody>
           </form>
         </Card>
+        <Link to="/">BAck TO HOME</Link>
       </div>
     </RegisterContextProvider>
   );
