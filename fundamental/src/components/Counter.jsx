@@ -3,10 +3,10 @@ import { Button, Divider, Input, input } from "@nextui-org/react";
 import { useSelector } from "react-redux";
 import { useDispatch, connect } from "react-redux";
 
-const slowDoubleNumber = (num) => {
-  for(let i = 0; i < 1000000000; i++) {}
-  return num * 2
-}
+// const slowDoubleNumber = (num) => {
+//   for(let i = 0; i < 1000000000; i++) {}
+//   return num * 2
+// }
 
 const Counter = () => {
   //store.count = mengambil nilai dari './store/index.js'
@@ -53,9 +53,9 @@ const Counter = () => {
   // const resultSlowDoubleNumber = slowDoubleNumber(count);
 
   // agar function lain tidak terganggu saat mengunggu function yang sedang di eksekusi
-  const resultSlowDoubleNumber = useMemo(() => {
-    return slowDoubleNumber(count);
-  }, [count]);
+  // const resultSlowDoubleNumber = useMemo(() => {
+  //   return slowDoubleNumber(count);
+  // }, [count]);
 
 
 
@@ -71,7 +71,7 @@ const Counter = () => {
           Add
         </Button>
       </div>{" "}
-      <p className="text-center text-lg font-semibold">{resultSlowDoubleNumber}</p>
+      {/* <p className="text-center text-lg font-semibold">{resultSlowDoubleNumber}</p> */}
       <Divider />
       <h1 className="text-center">global state</h1>
       <div className="flex items-center justify-around min-h-32">
